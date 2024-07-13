@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
+  },
+  "dependencies": {
+    "@types/uuid": "^10.0.0",
+    "mongoose": "^8.5.1",
+    "openai": "^4.52.7",
+    "redis": "^4.6.15",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "bun-types": "latest"
+  },
+  "module": "src/index.js",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
