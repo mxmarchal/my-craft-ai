@@ -111,7 +111,6 @@ const endpoints: Endpoints = {
 
       // If we reach this point, we need to create the crafted element
       //So we call OpenAI
-
       const newElement = await getNewElement(element1, element2);
       if (!newElement) {
         return new Response("Failed to create new element", { status: 500 });

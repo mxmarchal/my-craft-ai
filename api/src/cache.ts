@@ -8,7 +8,10 @@ const client = createClient({
   },
 });
 
-client.on("error", (err) => console.log("Redis Client Error", err));
+client.on("error", (err) => {
+  console.log("Redis Client Error", err);
+  process.exit(1);
+});
 
 await client.connect();
 
