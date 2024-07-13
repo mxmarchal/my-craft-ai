@@ -1,0 +1,31 @@
+name: my-craft-ai
+services:
+  api:
+    build:
+      context: api
+      dockerfile: .Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - cache
+      - db
+    environment:
+      - MONGO_URI=mongodb://db:27017/
+      - REDIS_URI=redis://cache:6379
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+  cache:
+    image: eqalpha/keydb
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - keydb_data:/data
+
+volumes:
+  keydb_data:
+  mongo_data:
