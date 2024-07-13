@@ -11,7 +11,7 @@ services:
       - db
     environment:
       - MONGO_URI=mongodb://db:27017/
-      - REDIS_URI=redis://cache:6379
+      - REDIS_URI=cache
   db:
     image: mongo:latest
     ports:
